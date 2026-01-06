@@ -17,7 +17,7 @@ type Event struct {
 
 var events = []Event{}
 
-func (e Event) Save() error {
+func (e *Event) Save() error {
 	// later add it to a database
 	query := `
 	INSERT INTO events(name, description, location, dateTime, user_id)

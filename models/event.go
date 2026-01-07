@@ -20,8 +20,8 @@ var events = []Event{}
 func (e *Event) Save() error {
 	// later add it to a database
 	query := `
-	INSERT INTO events(name, description, location, dateTime, user_id)
-	VALUES (?, ?, ?, ?, ?)
+		INSERT INTO events(name, description, location, dateTime, user_id)
+		VALUES (?, ?, ?, ?, ?)
 	`
 	stmt, err := db.DB.Prepare(query)
 	if err != nil {
@@ -99,12 +99,23 @@ func (event Event) Update() error {
 
 	defer stmt.Close()
 
-	result, err := stmt.Exec(event.Name, event.Description, event.Location, event.DateTime, event.ID)
+	_, err = stmt.Exec(event.Name, event.Description, event.Location, event.DateTime, event.ID)
+	return err
+}
 
+func (event Event) Delete() error {
+	query := `
+		DELETE FROM events
+		WHERE id = ?
+	`
+
+	stmt, err := db.DB.Prepare(query)
 	if err != nil {
 		return err
 	}
 
-	_, err = result.LastInsertId()
+	defer stmt.Close()
+
+	_, err = stmt.Exec(event.ID)
 	return err
 }

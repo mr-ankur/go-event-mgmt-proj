@@ -20,6 +20,7 @@ func signup(context *gin.Context) {
 
 	if err != nil {
 		context.JSON(http.StatusInternalServerError, gin.H{"message": "Could not save user. Try again later."})
+		return
 	}
 
 	context.JSON(http.StatusCreated, gin.H{"message": "User Created Successfully!"})

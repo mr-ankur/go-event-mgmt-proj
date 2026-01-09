@@ -1,10 +1,10 @@
 PUT http://localhost:8090/events/5
 content-type: application/json
-authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFua3VyQHlvcG1haWwuY29tIiwiZXhwIjoxNzY3OTQ5NjI5LCJ1c2VySWQiOjJ9.G1kRmT7rspfrSZ3YjphbTeNAjvt_huSEEB1mvrBuTaE
+authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFua3VyQHlvcG1haWwuY29tIiwiZXhwIjoxNzY3OTUwNDI5LCJ1c2VySWQiOjJ9.GzTERxRkjvYHwGpYlk0NwCk2ewHrCDxrj2MKpPSAsGY
 
 {
   "name": "Updated Event 1",
   "description": "This event created for fun!",
-  "location": "Kanpur",
+  "location": "Baroda",
   "dateTime": "2026-01-08T13:30:00.000Z"
 }

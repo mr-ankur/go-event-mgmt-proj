@@ -2,6 +2,6 @@ POST http://localhost:8090/login
 content-type: application/json
 
 {
-  "Email": "ankur@yopmail.com",
+  "Email": "vikash@yopmail.com",
   "Password": "test"
 }
